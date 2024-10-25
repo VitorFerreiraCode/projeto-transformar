@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Transformar - Login</title>
+    <link rel="stylesheet" href="/css/login.css"> <!-- Link para o CSS -->
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.jpeg" alt="Ícone" style="width: 50px; height: auto;"> <!-- Ajuste o tamanho do ícone conforme necessário -->
+        <h1>Projeto <span class="titulodestaque">Transformar</span></h1>
+    </header>
+    
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST"> <!-- Altere o action conforme necessário -->
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <p><a href="#">Esqueceu a senha?</a></p> <!-- Link para recuperação de senha -->
+    </div>
+</body>
+</html>

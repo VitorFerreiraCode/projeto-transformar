@@ -1,0 +1,101 @@
+body {
+    background-color: black; /* Fundo preto */
+    color: white; /* Texto branco */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Altura da tela */
+}
+
+header {
+    display: flex; /* Flexbox para alinhar ícone e título */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-bottom: 30px; /* Espaçamento abaixo do cabeçalho */
+}
+
+h1 {
+    font-size: 4rem; /* Tamanho muito grande do título */
+    margin: 0 0 0 10px; /* Espaço à esquerda do título */
+}
+
+.titulodestaque {
+    color: yellow; /* Palavra "Transformar" amarela */
+}
+
+.escolheraparelho, 
+.adicionarformulario, 
+.tabela {
+    background-color: #1a1a1a; /* Fundo escuro para as seções */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+    width: 90%; /* Largura das seções */
+    max-width: 600px; /* Largura máxima */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, 
+select, 
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid white; /* Bordas brancas */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #333; /* Fundo escuro para inputs */
+    color: white; /* Texto branco nos inputs */
+}
+
+button {
+    background-color: yellow; /* Fundo amarelo para botões */
+    color: black; /* Texto preto nos botões */
+    cursor: pointer; /* Mão ao passar o mouse sobre o botão */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+button:hover {
+    background-color: #f0e68c; /* Tom mais claro ao passar o mouse */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços entre as células */
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid white; /* Bordas brancas */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #444; /* Cabeçalho da tabela mais escuro */
+}
+
+tr:nth-child(even) {
+    background-color: #222; /* Linhas alternadas da tabela */
+}
+
+tr:hover {
+    background-color: #555; /* Realce ao passar o mouse sobre a linha */
+}
+
+a {
+    color: inherit; /* Mantém a cor do texto pai */
+    cursor: pointer; /* Muda o cursor para ponteiro */
+}
+
+a:hover {
+    color: inherit; /* Mantém a cor do texto ao passar o mouse */
+}

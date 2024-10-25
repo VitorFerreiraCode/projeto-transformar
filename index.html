@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Transformar - BDD</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="images/logo.jpeg" alt="Ícone" style="width: 30px; height: auto; vertical-align: middle; margin-right: 10px;">
+            Projeto <span class="titulodestaque">Transformar</span>
+        </h1>
+    </header>
+    
+    <a href="login.html">Login</a>
+
+    <div class="frasemotivacional">
+        <h3>"A empatia e a união entre as pessoas são essenciais para nos ajudar a transformar."</h3>
+    </div>
+
+    <div class="escolheraparelho"> 
+        <form>
+            <label for="device">Escolha um aparelho:</label>
+            <select id="device" name="device">
+                <option value="tvbox">TvBox</option>
+                <option value="pods">Pods</option>
+                <option value="robos">Robôs</option>
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="adicionarformulario">
+        <form action="/submit" method="POST">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+        
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required>
+        
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" required>
+
+            <label for="valor">Valor Unitário:</label>
+            <input type="number" id="valor" name="valor" required step="0.01">
+        
+            <button type="submit">Enviar</button>
+        </form>        
+    </div>
+
+    <div class="tabela">
+        <h1>Tabela de Aparelhos</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Quantidade</th>
+                <th>Valor Unitário</th>
+                <th>Valor Total</th>
+                
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>NIKBAR</td>
+                <td>1500 puff</td>
+                <td>10</td>
+                <td>100.00</td>
+                <td>1000.00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>IGNITE</td>
+                <td>5000 puff</td>
+                <td>10</td>
+                <td>120.00</td>
+                <td>1200.00</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
