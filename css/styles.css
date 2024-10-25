@@ -1,6 +1,6 @@
 body {
-    background-color: black; /* Fundo preto */
-    color: white; /* Texto branco */
+    background-color: black; /* Serve para deixar o background preto */
+    color: white; /* Deixei o branco para ficar legível */
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
@@ -12,13 +12,13 @@ header {
 }
 
 .titulodestaque {
-    color: yellow; /* Palavra "Transformar" amarela */
+    color: yellow; /* Palavra "Transformar" em amarelo */
 }
 
 .escolheraparelho, 
 .adicionarformulario, 
 .tabela {
-    background-color: #1a1a1a; /* Fundo escuro para as seções */
+    background-color: #1a1a1a; /* Deixar um pouco mais claro que o background */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px; /* Bordas arredondadas */
