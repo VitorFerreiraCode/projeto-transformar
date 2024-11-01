@@ -1,6 +1,6 @@
 body {
-    background-color: black; /* Serve para deixar o background preto */
-    color: white; /* Deixei o branco para ficar legível */
+    background-color: black;
+    color: white;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
@@ -12,17 +12,16 @@ header {
 }
 
 .titulodestaque {
-    color: yellow; /* Palavra "Transformar" em amarelo */
+    color: yellow;
 }
 
-.escolheraparelho, 
-.adicionarformulario, 
-.tabela {
-    background-color: #1a1a1a; /* Deixar um pouco mais claro que o background */
+/* Container padrão para seções com estilo */
+.section-container {
+    background-color: #1a1a1a;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
 }
 
 label {
@@ -30,61 +29,140 @@ label {
     margin: 10px 0 5px;
 }
 
-input, 
-select, 
-button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid white; /* Bordas brancas */
-    border-radius: 4px; /* Bordas arredondadas */
-    background-color: #333; /* Fundo escuro para inputs */
-    color: white; /* Texto branco nos inputs */
-}
-
-button {
-    background-color: yellow; /* Fundo amarelo para botões */
-    color: black; /* Texto preto nos botões */
-    cursor: pointer; /* Mão ao passar o mouse sobre o botão */
-    transition: background-color 0.3s; /* Transição suave */
-}
-
-button:hover {
-    background-color: #f0e68c; /* Tom mais claro ao passar o mouse */
-}
-
 table {
     width: 100%;
-    border-collapse: collapse; /* Remove espaços entre as células */
+    border-collapse: collapse;
     margin-top: 10px;
 }
 
-th, td {
-    border: 1px solid white; /* Bordas brancas */
+th,
+td {
+    border: 1px solid white;
     padding: 10px;
     text-align: left;
 }
 
 th {
-    background-color: #444; /* Cabeçalho da tabela mais escuro */
+    background-color: #444;
 }
 
 tr:nth-child(even) {
-    background-color: #222; /* Linhas alternadas da tabela */
+    background-color: #222;
 }
 
 tr:hover {
-    background-color: #555; /* Realce ao passar o mouse sobre a linha */
+    background-color: #555;
 }
 
 .frasemotivacional {
-    background-color: #333; /* Fundo escuro para a frase */
-    border: 1px solid yellow; /* Borda amarela */
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 15px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Espaçamento inferior */
-    font-style: italic; /* Estilo itálico para a frase */
-    font-size: 1.2em; /* Aumenta o tamanho da fonte */
-    color: yellow; /* Cor do texto amarela */
+    background-color: #333;
+    border: 1px solid yellow;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 1.2em;
+    color: yellow;
+}
+
+/* Estilo geral para modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #171717;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 300px;
+}
+
+/* Botão de fechar */
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+/* Efeito ao passar o mouse sobre o botão de fechar */
+.close:hover {
+    color: black;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Container dos botões do formulário */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    /* Mantém botões lado a lado */
+    gap: 10px;
+}
+
+/* Botões do formulário */
+.form-button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de gradiente no botão */
+.form-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #ffe600, transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.form-button:hover::before {
+    transform: translateX(100%);
+}
+
+/* Responsividade: Alinha botões verticalmente em telas menores */
+@media (max-width: 600px) {
+    .form-buttons {
+        flex-direction: column;
+    }
 }

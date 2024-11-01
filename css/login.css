@@ -1,28 +1,190 @@
+/* Reset de estilo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Gerais */
 body {
-    background-color: #1b1b1b; /* Fundo mais escuro */
-    color: white; /* Texto branco */
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* Para permitir que o rodapé fique embaixo */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Altura da tela inteira */
 }
 
+/* Container Principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    /* Aumentando a largura máxima do container */
+    padding: 48px;
+    /* Aumentando o padding */
+    flex: 1;
+    /* Permite que o container ocupe o espaço disponível */
+}
+
+/* Estilo do Cabeçalho */
 .header-title {
-    margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 48px;
+    /* Aumentando a margem inferior */
 }
 
+/* Alinhamento horizontal do logo e do título */
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    /* Aumentando o espaço entre o logo e o título */
+}
+
+.logo {
+    width: 72px;
+    /* Aumentando o tamanho do logo */
+    height: auto;
+}
+
+.header-title h1 {
+    font-size: 36px;
+    /* Aumentando o tamanho do título */
+    color: #ffffff;
+}
+
+.text-warning {
+    color: #ffee00;
+    /* Cor de destaque */
+}
+
+/* Estilo do Login */
 .login-container {
-    background-color: rgba(45, 45, 45, 0.9); /* Fundo do container um pouco mais claro */
-    padding: 20px;
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    background-color: #171717;
+    padding: 48px;
+    /* Aumentando o padding do container de login */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
 }
 
-button {
-    background-color: yellow; /* Fundo amarelo para botões */
-    color: black; /* Texto preto nos botões */
-    font-size: 1.2rem; /* Tamanho do texto no botão aumentado */
-    padding: 12px; /* Mais espaço dentro do botão */
-    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+/* Título do Login */
+.login-title {
+    text-align: center;
+    font-size: 28px;
+    /* Aumentando o tamanho do título do login */
+    margin-bottom: 36px;
+    /* Aumentando a margem inferior */
 }
 
-button:hover {
-    background-color: #f0e68c; /* Tom mais claro ao passar o mouse */
-    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+/* Estilo dos Inputs */
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 36px;
+    /* Aumentando o espaço entre os campos */
+}
+
+.input-container input {
+    height: 60px;
+    /* Aumentando a altura dos inputs */
+    background: transparent;
+    border: 1px solid #373538;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 60px;
+    /* Aumentando o padding para acomodar os ícones */
+    width: 100%;
+    font-size: 22px;
+    /* Aumentando o tamanho da fonte */
+    color: rgb(255 255 255 / 96%);
+    transition: border-color 0.3s ease;
+}
+
+.input-container input:focus {
+    border-color: #ffee00;
+    /* Cor do contorno ao focar */
+}
+
+/* Estilo dos Ícones */
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    /* Aumentando o espaço do ícone à esquerda */
+    transform: translateY(-50%);
+    color: #ffee00;
+    /* Cor dos ícones */
+    font-size: 28px;
+    /* Aumentando o tamanho dos ícones */
+}
+
+/* Estilo do Botão com Efeito Hover */
+.btn-login {
+    border-radius: 10px;
+    padding: 18px;
+    /* Aumentando o padding do botão */
+    width: 100%;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    background-color: #333;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 22px;
+    /* Aumentando o tamanho da fonte do botão */
+    transition: background-color 0.3s ease;
+}
+
+.btn-login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #424242, transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn-login:hover::before {
+    transform: translateX(100%);
+}
+
+/* Rodapé */
+footer {
+    color: #ffffff;
+    font-size: 1.2em;
+    /* Aumentando o tamanho da fonte do rodapé */
+    margin-top: 24px;
+    /* Aumentando o espaçamento entre o container e o crédito */
+    opacity: 0.8;
+    /* Transparência para suavizar */
+    text-align: center;
+    /* Centraliza o texto do rodapé */
+    width: 100%;
+    /* Largura total do rodapé */
+}
+
+/* Sombra amarela luminosa para a palavra "Transformar" */
+.text-warning {
+    color: #ffee00;
+    /* Define a cor do texto */
+    text-shadow: 0px 0px 10px #ffee00,
+        /* Sombra amarela principal */
+        0px 0px 300px #ffee00,
+        /* Sombra mais suave */
+        0px 0px 60px #ffee00;
+    /* Sombra ainda mais suave */
 }
