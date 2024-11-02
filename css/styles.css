@@ -72,6 +72,32 @@ tr:hover {
     background-color: #ffe5a3;
 }
 
+/* Centralizar título do modal */
+.modal-title {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    /* Espaçamento entre o título e o conteúdo do modal */
+}
+
+/* Espaçamento entre os inputs do formulário */
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content select {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 15px;
+    /* Espaçamento entre os campos */
+    background: transparent;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
 /* Modal */
 .modal-content {
     background-color: #ffffff;
@@ -115,33 +141,36 @@ input[type="number"] {
     margin-right: 10px;
 }
 
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-/* Botão Adicionar abaixo do select */
+/* Centralização e estilização do botão Adicionar e select */
 .form-buttons {
     display: flex;
     justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
+select,
 .form-button {
     padding: 10px;
     border-radius: 4px;
+    font-size: 16px;
+    height: 44px;
+}
+
+select {
+    width: auto;
+    border: 1px solid #d0d0d0;
+    background-color: #fff;
+    color: #333;
+}
+
+.form-button {
     font-weight: bold;
     text-transform: uppercase;
     color: #333;
     background-color: #ffe600;
     cursor: pointer;
-    font-size: 16px;
     border: none;
     transition: background-color 0.3s ease;
 }
@@ -177,4 +206,27 @@ select {
 
 .remove-button:hover {
     background-color: #e53935;
+}
+
+.ponto {
+    color: #f5f5f5;
+}
+
+/* Título da tabela com espaçamento após o cabeçalho */
+.titulo-tabela {
+    text-align: center;
+    color: #333;
+    margin-top: 80px;
+    /* Ajuste o valor conforme a altura do cabeçalho */
+}
+
+/* Container ao redor da tabela */
+.box-container {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0 20px;
+    /* margem superior maior para separar do cabeçalho */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
