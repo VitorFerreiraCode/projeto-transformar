@@ -25,58 +25,51 @@
         <h3>"A empatia e a união entre as pessoas são essenciais para nos ajudar a transformar."</h3>
     </section>
 
-    <section class="menu-de-alteracoes">
-        <div class="form-buttons">   
-            <button type="button" class="form-button" id="add-form-button">Adicionar</button>
-            <button type="button" class="form-button">Editar</button>
-            <button type="button" class="form-button">Remover</button>
-        </div>
-
-    </section>
 
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close" id="close-button">&times;</span> <!-- Botão para fechar o modal -->
-            <h1>Cadastro de Produtos</h1>
+            <h1 class="titulo-container">Cadastro de Produtos</h1>
             <form id="form" action="/submit" method="POST">
                     <label for="device">Escolha um aparelho:</label>
-                    <select id="device" name="device">
+                <select id="device" name="device">
+                    <option selected disabled>Selecione</option>
                     <option value="tvbox">TvBox</option>
                     <option value="pods">Pods</option>
                     <option value="robos">Robôs</option>
                 </select>
-                <label for="marca">Marca:</label>
-                <input type="text" id="marca" name="marca" required>
+
+                <input placeholder=" Marca:" type="text" id="marca" name="marca" required>
     
-                <label for="modelo">Modelo:</label>
-                <input type="text" id="modelo" name="modelo" required>
+                <input placeholder=" Modelo:" type="text" id="modelo" name="modelo" required>
     
-                <label for="quantidade">Quantidade:</label>
-                <input type="number" id="quantidade" name="quantidade" required>
+                <input placeholder=" Quantidade" type="number" id="quantidade" name="quantidade" required>
     
-                <label for="valor">Valor Unitário:</label>
-                <input type="number" id="valor" name="valor" required step="0.01">
+                <input placeholder=" Valor Unitário:" type="number" id="valor" name="valor" required step="0.01">
     
-                <button type="submit">Enviar</button>
+                <button class="form-button" type="submit">Enviar</button>
             </form>
         </div>
     </div>
 
-
-    <section class="escolher-aparelho">
-        <form>
-            <label for="device">Escolha uma Tabela:</label>
-            <select id="device" name="device">
-                <option value="tvbox">TvBox</option>
-                <option value="pods">Pods</option>
-                <option value="robos">Robôs</option>
-            </select>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
-
     <section class="tabela-aparelhos">
-        <h1>Tabela de Aparelhos</h1>
+        <h1 class="titulo-tabela">Tabela de Aparelhos</h1>
+        <div>
+            <section class="menu-de-alteracoes">
+                <div class="form-buttons">
+                    <select id="device" name="device">
+                        <option selected disabled>Selecione o Aparelho</option>
+                        <option value="tvbox">TvBox</option>
+                        <option value="pods">Pods</option>
+                        <option value="robos">Robôs</option>
+                    </select>
+                    <button type="button" class="form-button" id="add-form-button">Adicionar</button>
+                    <button type="button" class="form-button">Editar</button>
+                    <button type="button" class="form-button">Remover</button>
+                    <button class="form-button submit-button" type="submit">Atualizar Tabela</button>
+                </div>
+            </section>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -86,28 +79,15 @@
                     <th>Quantidade</th>
                     <th>Valor Unitário</th>
                     <th>Valor Total</th>
+                    <th>Ações</th> <!-- Coluna para Ações -->
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>NIKBAR</td>
-                    <td>1500 puff</td>
-                    <td>10</td>
-                    <td>100.00</td>
-                    <td>1000.00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>IGNITE</td>
-                    <td>5000 puff</td>
-                    <td>10</td>
-                    <td>120.00</td>
-                    <td>1200.00</td>
-                </tr>
+                <!-- As linhas da tabela serão preenchidas aqui pelo script -->
             </tbody>
         </table>
     </section>
+
 </body>
 
     <script src="/src/script.js"></script>
