@@ -1,59 +1,51 @@
+/* Estilização para o corpo */
 body {
-    background-color: black;
-    color: white;
+    background-color: #f5f5f5;
+    color: #333;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
+    padding-top: 170px;
 }
 
+/* Cabeçalho ajustado */
 header {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.titulodestaque {
-    color: yellow;
-}
-
-.titulo-tabela {
-    text-align: center;
-    color: #ffffff;
-        /* Define a cor do texto */
-        text-shadow: 0px 0px 10px #ffffff,
-        /* Sombra amarela principal */
-        0px 0px 300px #ffffff,
-        /* Sombra mais suave */
-        0px 0px 60px #ffffff;
-        /* Sombra ainda mais suave */
-
+    background-color: black;
+    color: white;
+    padding: 5px 0;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.4em;
 }
 
 /* Sombra amarela luminosa para a palavra "Transformar" */
 .titulodestaque {
     color: #ffee00;
-    /* Define a cor do texto */
-    text-shadow: 0px 0px 10px #ffee00,
-        /* Sombra amarela principal */
-        0px 0px 300px #ffee00,
-        /* Sombra mais suave */
-        0px 0px 60px #ffee00;
-    /* Sombra ainda mais suave */
+    text-shadow: 0px 0px 10px #ffee00, 0px 0px 300px #ffee00, 0px 0px 60px #ffee00;
+    font-size: 1.4em;
 }
 
-/* Container padrão para seções com estilo */
+/* Título da tabela */
+.titulo-tabela {
+    text-align: center;
+    color: #333;
+}
+
+/* Container padrão para seções claras */
 .section-container {
-    background-color: #1a1a1a;
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(224, 224, 224, 0.4);
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
+/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -62,220 +54,127 @@ table {
 
 th,
 td {
-    border: 1px solid white;
+    border: 1px solid #e0e0e0;
     padding: 10px;
     text-align: center;
-    /* Centraliza o conteúdo */
 }
 
 th {
-    background-color: #444;
+    background-color: #eaeaea;
+    color: #333;
 }
 
 tr:nth-child(even) {
-    background-color: #222;
+    background-color: #f9f9f9;
 }
 
 tr:hover {
-    background-color: #555;
+    background-color: #ffe5a3;
 }
 
-.frasemotivacional {
-    background-color: #333;
-    border: 1px solid yellow;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 20px;
-    font-style: italic;
-    font-size: 1.2em;
-    color: yellow;
-}
-
-/* Estilo geral para modais */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* Conteúdo do modal */
+/* Modal */
 .modal-content {
-    background-color: #171717;
+    background-color: #ffffff;
     margin: 15% auto;
     padding: 20px;
     border-radius: 8px;
     width: 80%;
     max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Botão de fechar */
 .close {
     float: right;
     font-size: 24px;
     cursor: pointer;
-    color: #ffffff;
+    color: #333;
 }
 
-/* Efeito ao passar o mouse sobre o botão de fechar */
 .close:hover {
-    color: black;
+    color: #555;
 }
 
 /* Formulário */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
 input[type="text"],
 input[type="number"] {
-        
-        width: 200px;
-        /* largura do select */
-        padding: 10px;
-        /* espaçamento interno */
-        background: transparent;
-        border: 1px solid #373538;
-        border-radius: 4px;
-        outline: none;
-        width: 97%;
-        font-size: 16px;
-        /* Aumentando o tamanho da fonte */
-        color: rgb(255 255 255 / 96%);
-        transition: border-color 0.3s ease;
-
-    }
-
-/* Container dos botões do formulário */
-.form-buttons {
-    margin-left: 20%;
-    margin-top: 10px;
-    justify-content: space-between;
-    /* Mantém botões lado a lado */
-    gap: 10px;
-
+    width: 97%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
 }
 
-/* Botões do formulário */
+.imagem-logo {
+    width: 100px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Botão Adicionar abaixo do select */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+}
+
 .form-button {
-    flex: 1;
     padding: 10px;
     border-radius: 4px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #ffffff;
-    background-color: #333;
+    color: #333;
+    background-color: #ffe600;
     cursor: pointer;
     font-size: 16px;
     border: none;
     transition: background-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
-/* Efeito de gradiente no botão */
-.form-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, #b1b1b1, transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-}
- n
-.form-button:hover::before {
-    transform: translateX(100%);
+.form-button:hover {
+    background-color: #ffd54f;
 }
 
-select {
-    width: 23;
-    /* largura do select */
-    padding: 10px;
-    /* espaçamento interno */
-    border: 1px solid #ffe600;
-    /* borda */
-    border-radius: 4px;
-    /* borda arredondada */
-    background-color: #161616;
-    /* cor de fundo */
-    color: #ffffff;
-    /* cor do texto */
-    font-size: 16px;
-    /* tamanho da fonte */
-    text-align: center;
-    /* Centraliza o texto no select */
-    margin: 0 auto;
-    /* Centraliza o select no container */
-}
-
-option {
-    color: #ffffff;
-    background-color: #161616;
-    padding: 10px;
-}
-
-option::after {
-    content: "▼";
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #333;
-}
-
-/* Título do Login */
-.titulo-container {
-    text-align: center;
-    font-size: 28px;
-    /* Aumentando o tamanho do título do login */
-    margin-bottom: 36px;
-    /* Aumentando a margem inferior */
-}
-
-/* Botões de Ação na Tabela */
+/* Botões de ação na tabela */
 .edit-button,
 .remove-button {
     padding: 8px 12px;
     border: none;
     border-radius: 4px;
-    color: white;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
-    margin-right: 5px;
-    /* Espaço entre os botões */
 }
 
-/* Estilo do botão Editar */
 .edit-button {
     background-color: #4CAF50;
-    /* Verde */
+    color: white;
 }
 
 .edit-button:hover {
     background-color: #45a049;
-    /* Verde escuro */
 }
 
-/* Estilo do botão Remover */
 .remove-button {
     background-color: #f44336;
-    /* Vermelho */
+    color: white;
 }
 
 .remove-button:hover {
     background-color: #e53935;
-    /* Vermelho escuro */
 }

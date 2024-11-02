@@ -25,13 +25,13 @@
             <form>
                 <div class="input-container">
                     <span class="material-symbols-outlined icon">person</span>
-                    <input type="text" placeholder="Usuário" required />
+                    <input type="text" placeholder="Usuário" id="login" required />
                 </div>
                 <div class="input-container">
                     <span class="material-symbols-outlined icon">lock</span>
-                    <input type="password" placeholder="Senha" required />
+                    <input type="password" placeholder="Senha" id="senha" required />
                 </div>
-                <button type="submit" class="btn-login">Entrar</button>
+                <button type="submit" class="btn-login" onclick="logar(); return false">Entrar</button>
             </form>
         </div>
     </div>
@@ -41,5 +41,7 @@
     </footer>
 
 </body>
+
+    <script src="/src/login.js"></script>
 
 </html>

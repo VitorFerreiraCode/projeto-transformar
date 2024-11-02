@@ -9,16 +9,22 @@ document.getElementById('add-form-button').addEventListener('click', function ()
 
 // Adiciona um ouvinte de evento ao botão de fechar
 closeButton.addEventListener('click', function () {
-    modal.style.display = 'none'; // Oculta o modal
+    modal.style.display = 'none'; // Fecha o modal
 });
 
-// Fecha o modal se o usuário clicar fora do conteúdo do modal
+// Fecha o modal se o usuário clicar fora dele
 window.addEventListener('click', function (event) {
     if (event.target == modal) {
-        modal.style.display = 'none'; // Oculta o modal
+        modal.style.display = 'none';
     }
 });
 
+// Mantém o modal fechado ao carregar a página
+window.onload = function () {
+    modal.style.display = 'none'; // Garante que o modal comece fechado
+};
+
+// Evento para lidar com o envio do formulário
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("form");
     const tableBody = document.querySelector("tbody");
@@ -29,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Obtém os valores dos inputs
         const marca = document.getElementById("marca").value;
         const modelo = document.getElementById("modelo").value;
-        const quantidade = document.getElementById("quantidade").value;
-        const valor = parseFloat(document.getElementById("valor").value);
-        const valorTotal = quantidade * valor;
+        const quantidade = parseInt(document.getElementById("quantidade").value);
+        const valorUnitario = parseFloat(document.getElementById("valor").value);
+        const valorTotal = (quantidade * valorUnitario).toFixed(2);
 
         // Cria uma nova linha na tabela
         const newRow = document.createElement("tr");
@@ -40,53 +46,65 @@ document.addEventListener("DOMContentLoaded", function () {
             <td>${marca}</td>
             <td>${modelo}</td>
             <td>${quantidade}</td>
-            <td>${valor.toFixed(2)}</td>
-            <td>${valorTotal.toFixed(2)}</td>
+            <td>R$ ${valorUnitario.toFixed(2)}</td>
+            <td>R$ ${valorTotal}</td>
             <td>
-                <button class="edit-button">Editar</button>
-                <button class="remove-button">Remover</button>
+                <button class="edit-button" style="display: none;">
+                    <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button class="remove-button" style="display: none;">
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </td>
         `;
 
+        // Adiciona a nova linha ao corpo da tabela
         tableBody.appendChild(newRow);
+
+        // Limpa os campos do formulário
         form.reset();
+        modal.style.display = 'none'; // Oculta o modal
 
-        // Adiciona evento para o botão de remover
-        newRow.querySelector(".remove-button").addEventListener("click", function () {
-            newRow.remove();
-            updateRowIds();
-        });
-
-        // Adiciona evento para o botão de editar
-        newRow.querySelector(".edit-button").addEventListener("click", function () {
-            editRow(newRow);
-        });
+        // Adiciona eventos de mouse para a nova linha
+        addHoverEffectToRow(newRow);
     });
 
-    // Função para editar uma linha
-    function editRow(row) {
-        const cells = row.querySelectorAll("td");
-        const marca = cells[1].textContent;
-        const modelo = cells[2].textContent;
-        const quantidade = cells[3].textContent;
-        const valor = cells[4].textContent;
+    // Função para adicionar efeitos de hover e ouvir os eventos de edição e remoção à nova linha
+    function addHoverEffectToRow(row) {
+        const editButton = row.querySelector('.edit-button');
+        const removeButton = row.querySelector('.remove-button');
 
-        document.getElementById("marca").value = marca;
-        document.getElementById("modelo").value = modelo;
-        document.getElementById("quantidade").value = quantidade;
-        document.getElementById("valor").value = valor;
+        // Mostra os botões ao passar o mouse
+        row.addEventListener('mouseover', function () {
+            editButton.style.display = 'inline-block';
+            removeButton.style.display = 'inline-block';
+        });
 
-        // Remove a linha após editar
-        row.remove();
-        updateRowIds();
-    }
+        // Esconde os botões ao sair com o mouse
+        row.addEventListener('mouseout', function () {
+            editButton.style.display = 'none';
+            removeButton.style.display = 'none';
+        });
 
-    // Função para atualizar os IDs da tabela
-    function updateRowIds() {
-        const rows = tableBody.querySelectorAll("tr");
-        rows.forEach((row, index) => {
-            row.cells[0].textContent = index + 1; // Atualiza o ID da linha
+        // Lida com a edição
+        editButton.addEventListener('click', function () {
+            const cells = row.querySelectorAll('td');
+
+            // Preenche o formulário com os dados da linha
+            document.getElementById("marca").value = cells[1].innerText;
+            document.getElementById("modelo").value = cells[2].innerText;
+            document.getElementById("quantidade").value = cells[3].innerText;
+            document.getElementById("valor").value = parseFloat(cells[4].innerText.replace('R$', '').trim()).toFixed(2);
+
+            modal.style.display = 'block'; // Exibe o modal para edição
+
+            // Remove a linha ao abrir o modal para evitar duplicação
+            row.remove();
+        });
+
+        // Lida com a remoção
+        removeButton.addEventListener('click', function () {
+            row.remove(); // Remove a linha da tabela
         });
     }
 });
-
