@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Transformar - BDD</title>
     <link rel="stylesheet" href="/css/styles.css">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <header>
-        <h1>
+        <h1 class="titulo-cabecalho">
             <img class="imagem-logo" src="images/logo.jpeg" alt="Logo Projeto Transformar">
-            Projeto <span class="titulodestaque">Transformar</span>
+               Projeto <span class="titulodestaque">Transformar</span>
         </h1>
-        <h3>"A empatia e a união entre as pessoas são essenciais para nos ajudar a transformar."</h3>
+        <nav>
+            <a href="pages/kanban.html" class="nav-btn">Tabela Kanban</a>
+            <a href="#home" class="nav-btn"><i class="fa-solid fa-house"></i>>home</span> Home</a>
+            <a href="#equipe" class="nav-btn"><i class="fa-solid fa-handshake"></i>Equipe</a>
+        </nav>
     </header>
 
     <div id="modal" class="modal"> <!-- Modal fechado por padrão, estilo definido no CSS -->
@@ -42,7 +44,7 @@
     </div>
 
     <section class="box-container">
-        <h1 class="titulo-tabela">Tabela de Aparelhos</h1> <!-- Título da tabela aqui -->    
+        <h1 class="titulo-tabela">TABELA DE <span>TVBOX</span></h1> <!-- Título da tabela aqui -->    
             <section class="menu-de-alteracoes">
                 <div class="form-buttons">
                     <label class="ponto" for="device-select-2">.</label>
@@ -58,87 +60,6 @@
                 </div>
             </section>
         </div>
-        <table id="inventario-sala">
-            <h1 class="titulo-tabela">Inventário Sala</h1>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Quantidade</th>
-                    <th>Valor Unitário</th>
-                    <th>Valor Total</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- As linhas da tabela serão preenchidas aqui pelo script -->
-            </tbody>
-        </table>
-        <table id="inventario-doacao" >
-            <h1 class="titulo-tabela">Inventário Doacões</h1>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Mac</th>
-                    <th>Modelo</th>
-                    <th>Destino</th>
-                    <th>Cidade</th>
-                    <th>Estado</th>
-                    <th>Data</th>
-                    <th>Situacao</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>f0ceeee63236</td>
-                    <td>MXQ</td>
-                    <td>PROJETO - RONDON - SERGIPE</td>
-                    <td>Cedro de São João</td>
-                    <td>SE</td>
-                    <td>10/01/24</td>
-                    <td>EM OPERACAO</td>
-                </tr>
-            </tbody>
-        </table>
-        <table id="inventario-pods">
-            <h1 class="titulo-tabela">Inventário Pods</h1>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Ignite</td>
-                    <td>Peach</td>
-                </tr>
-            </tbody>
-        </table>
-        <table id="inventario-robos">
-            <h1 class="titulo-tabela">Inventário Robo Aspirador</h1>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Mac</th>
-                    <th>Situacao</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Xiaomi</td>
-                    <td>S10</td>
-                    <td>facmm0s</td>
-                    <td>Operando</td>
-                </tr>
-            </tbody>
-        </table>
         
     </section>
 
